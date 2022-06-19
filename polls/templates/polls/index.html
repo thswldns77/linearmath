@@ -1,0 +1,55 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linear mathmatics</title>
+
+</head>
+
+<body>
+    <div id="jb-container">
+        <div id="jb-header">
+            <h1>Linear mathmatics</h1>
+        </div>
+        <div id="jb-content">
+            <p>Hello! This page is example of django project.</p>
+        </div>
+        {% if latest_exam_list %}
+            <div id="jb-sidebar">
+            <h4>
+                exam list
+            </h4>
+                {%  for exam in latest_exam_list %}
+        
+                    {{ exam.exam_text }}<br>
+                    - <a href="{% url 'polls:detail' exam.id %}">Take exam</a><br>
+                {%  endfor  %}
+            </div>
+        {% else %}
+            <div id="jb-sidebar">
+                <p>No Exam are available.</p>
+            </div>
+            
+        {% endif %}
+            
+
+        <div id="jb-footer">
+            django exam project made bj CJH
+        </div>
+
+        
+    </div>
+
+
+
+
+
+    
+
+
+</body>

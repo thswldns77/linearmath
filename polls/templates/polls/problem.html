@@ -1,0 +1,55 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Problem</title>
+
+</head>
+
+<body>
+    <div id="jb-container">
+        <div id="jb-header">
+            <h1>Make Problem</h1>
+            {% if error_message %}<p style="color:#FF0000"><strong>{{  error_message }}</strong></p>{% endif %}
+        </div>
+        <div id="jb-maincontent">
+            <form action="{%  url 'polls:addProblem' exam.id %}" method="post">
+                {% csrf_token %}
+                <p>Problem name <br><textarea id='qname' name='qname' rows='1' cols='40'></textarea></p>
+                <p>Problem contents <br><textarea id='qcontents' name='qcontents' rows='3' cols='40'></textarea></p>
+                <div id="t_space">
+                <p>add choice <input type="button" value="add" onclick='add_textbox()'><br></p> 
+                
+                </div>
+        
+                <input type="submit" value="Submit"><br>
+                <a href="{% url 'polls:index'%}">Main Page</a>
+            </form>
+        </div>
+
+        <div id="jb-footer">
+            <p>django exam project made bj CJH</p>
+        </div>
+        
+    
+        <script>
+            function add_textbox(){
+                document.getElementById("t_space").innerHTML +=
+                "isAnswer? <input type='radio' name='choice' >Choice name <input type='text' name='choice' > <br>";
+            }
+        </script>
+    </div>
+
+    
+
+</body>
+
+
+
+

@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Result</title>
+</head>
+
+<body>
+
+<div id="jb-container">
+      <div id="jb-header">
+              <h1>Exam result</h1>
+      </div>
+      
+      <div id="jb-maincontent">
+              <h2>{{ score }}</h2>
+              <p><a href="{% url 'polls:detail' exam.id %}">Exam again?</a></p>
+      </div>
+              
+      <div id="jb-maincontent">
+              <a href="{% url 'polls:index'%}">Main Page</a>
+      </div>
+
+      <div id="jb-footer">
+              django exam project made bj CJH
+      </div>
+
+
+
+
+
+</div>
+
+
+
+</body>
