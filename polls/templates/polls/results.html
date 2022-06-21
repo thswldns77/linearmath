@@ -19,7 +19,8 @@
       </div>
       
       <div id="jb-maincontent">
-              <h2>{{ score }}</h2>
+        {% if score == 100 %}<h2><strong>정답</strong></h2>{% endif %}
+        {% if score != 100 %}<h2><strong>오답</strong></h2>{% endif %}
               <p><a href="{% url 'polls:detail' exam.id %}">Exam again?</a></p>
       </div>
               
@@ -28,15 +29,9 @@
       </div>
 
       <div id="jb-footer">
-              django exam project made bj CJH
-      </div>
-
-
-
-
+        36_32212217_손지운
+    </div>
 
 </div>
-
-
 
 </body>

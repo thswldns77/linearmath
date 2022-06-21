@@ -32,8 +32,8 @@
         width: 940px;
     }
     #jb-content{ 
-    width: 580px;
-    float: left;
+        width: 580px;
+        float: left;
     }
     #jb-maincontent {
         width: 580px;
@@ -46,4 +46,9 @@
     #jb-footer {
         clear: both;
     }
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

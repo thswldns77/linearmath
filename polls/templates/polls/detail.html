@@ -25,9 +25,7 @@
         {% for question in exam.question_set.all %}
             <div id="jb-maincontent">
                 <h3>{{ question.question_text|linebreaks }}</h3>
-                <h5>{{ question.question_contents|linebreaks }}</h5>
                 <h3>___________________________</h3>
-
                 {% for choice in question.choice_set.all %}
                     <input type="radio" name="{{question.question_text}}" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
                     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
@@ -36,22 +34,17 @@
             </div>
         {% endfor %}
         <div id="jb-maincontent">
-            <p><strong>Notice!!!
-                if you finish the exam, click "Submit" Button</strong></p>
+            <p><b>submit 버튼을 누르면 결과가 나옵니다.</b></p>
         </div>
         <div id="jb-content">
             <input type="submit" value="Submit"><br><br>
             <a href="{% url 'polls:index'%}">Main page</a>
         </div>
         <div id="jb-footer">
-            <p>django exam project made bj CJH</p>
-        </div>
+          36_32212217_손지운
+      </div>
     
     </form>
-
-    
-    
-
 </div>
 
 </body>

@@ -16,9 +16,6 @@
         <div id="jb-header">
             <h1>Linear mathmatics</h1>
         </div>
-        <div id="jb-content">
-            <p>Hello! This page is example of django project.</p>
-        </div>
         {% if latest_exam_list %}
             <div id="jb-sidebar">
             <h4>
@@ -27,7 +24,7 @@
                 {%  for exam in latest_exam_list %}
         
                     {{ exam.exam_text }}<br>
-                    - <a href="{% url 'polls:detail' exam.id %}">Take exam</a><br>
+                    - <a href="{% url 'polls:detail' exam.id %}"><b>Take exam</b></a><br>
                 {%  endfor  %}
             </div>
         {% else %}
@@ -36,20 +33,9 @@
             </div>
             
         {% endif %}
-            
-
         <div id="jb-footer">
-            django exam project made bj CJH
+            36_32212217_손지운
         </div>
 
-        
     </div>
-
-
-
-
-
-    
-
-
 </body>
