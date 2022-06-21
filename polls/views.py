@@ -9,11 +9,6 @@ def index(request):
     latest_exam_list = Exam.objects.order_by()
     return render(request,'polls/index.html', {'latest_exam_list': latest_exam_list})
 
-def problem(request, exam_id):
-    exam = get_object_or_404(Exam, pk= exam_id)
-    return render(request,'polls/problem.html',{'exam':exam})
-
-
 def detail(request, exam_id):
     exam = get_object_or_404(Exam, pk= exam_id)
 
